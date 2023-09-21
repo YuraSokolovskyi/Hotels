@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="ParadiseHotels.Room"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:ParadiseHotels"
+             mc:Ignorable="d"
+             d:DesignHeight="200" d:DesignWidth="700">
+    <Grid Background="Aqua" Margin="0 0 0 10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="50"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+        <StackPanel Grid.Column="1" Name="HotelBlock">
+            <TextBlock Name="RoomName" FontSize="24" FontWeight="Bold" Margin="0 10 0 5">test`</TextBlock>
+            <TextBlock Name="RoomAddress" FontSize="16" FontWeight="Light" Foreground="#878787" Margin="0 0 0 5">test</TextBlock>
+            <TextBlock Name="RoomDescription" TextWrapping="Wrap" FontSize="18" FontWeight="Regular" Margin="0 0 0 10">lots of tests</TextBlock>
+        </StackPanel>
+    </Grid>
+</UserControl>

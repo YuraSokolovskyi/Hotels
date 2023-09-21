@@ -1,0 +1,28 @@
+﻿[
+  {
+    "Name": "Hotel1",
+    "Description": "Great Hotel",
+    "City": "Kyiv",
+    "Address": "someAddress",
+    "Email": "some@gmail.com",
+    "Phone": "+38051453466",
+    "Rooms": [
+      {
+        "Price": 125,
+        "Bedrooms": 1,
+        "Bathrooms": 1,
+        "IsKitchen": true,
+        "Area": 25.9,
+        "RoomType": "Premium"
+      },
+      {
+        "Price": 100,
+        "Bedrooms": 1,
+        "Bathrooms": 1,
+        "IsKitchen": true,
+        "Area": 25.9,
+        "RoomType": "Premium"
+      }
+    ]
+  }
+]
