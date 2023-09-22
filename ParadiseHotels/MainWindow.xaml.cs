@@ -13,20 +13,18 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Newtonsoft.Json;
-using ParadiseHotels.DAL;
-using ParadiseHotels.DAL.Entity;
-using ParadiseHotels.Providers;
-using ParadiseHotels.DAL.Repositories;
+using Services;
 
 namespace ParadiseHotels
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    
     public partial class MainWindow : Window
     {
         private SelectRoomPage _selectRoomPage = new SelectRoomPage();
+        private Services.Services _services = new Services.Services();
         
         public MainWindow()
         {
@@ -37,23 +35,7 @@ namespace ParadiseHotels
             Frame.Navigate(_selectRoomPage);
             
             // TEST DATA
-            uploadTestData();
-        }
-
-        private void uploadTestData()
-        {
-            string jsonPath = "D:\\C#\\Hotels\\ParadiseHotels\\TestData\\RoomsData.json";
-            string content = File.ReadAllText(jsonPath);
-            
-            var context = new ParadiseHotelsContext();
-
-            var hotelRepository = new Repository<Hotel>(context);
-            var hotelProvider = new HotelProvider(hotelRepository);
-
-            // var roomRepository = new Repository<ParadiseHotels.DAL.Entity.Room>(context);
-            // var roomProvider = new RoomProvider(roomRepository);
-            List<Hotel> res = JsonConvert.DeserializeObject<List<Hotel>>(content);
-            hotelProvider.AddHotels(res);
+            // _services.uploadTestData();
         }
         
         private void Room_OnMouseLeftButtonUp(object sender, EventArgs e)

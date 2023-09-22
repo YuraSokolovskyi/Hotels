@@ -30,7 +30,8 @@ public class Room
     public string RoomType { get; set; }
     
     [Required]
-    public virtual Hotel Hotel { get; set; }
+    public ICollection<RoomBooking> RoomBooking { get; set; }
     
-    // public virtual RoomsStatus RoomsStatus { get; set; }
+    [Required]
+    public virtual Hotel Hotel { get; set; }
 }

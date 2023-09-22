@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParadiseHotels.DAL", "Parad
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParadiseHotels", "ParadiseHotels\ParadiseHotels.csproj", "{D590BC45-9A42-46C5-B815-9893F21A731D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ParadiseHotels.Services", "ParadiseHotels.Services", "{FBD6EB0B-76FB-4DF2-90AC-D456CC171B1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParadiseHotels.Services", "ParadiseHotels.Services\ParadiseHotels.Services\ParadiseHotels.Services.csproj", "{B13F7A45-BD6E-48B9-815B-4569ABD97650}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,6 +26,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{EA789805-6DD7-48AA-ADC2-340462C388E6} = {7AD72F76-BBE4-476B-8325-A880DE374390}
 		{D590BC45-9A42-46C5-B815-9893F21A731D} = {5A866B9B-D53F-45F0-A4B9-E1A15EA61283}
+		{B13F7A45-BD6E-48B9-815B-4569ABD97650} = {FBD6EB0B-76FB-4DF2-90AC-D456CC171B1A}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{EA789805-6DD7-48AA-ADC2-340462C388E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -32,5 +37,9 @@ Global
 		{D590BC45-9A42-46C5-B815-9893F21A731D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D590BC45-9A42-46C5-B815-9893F21A731D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D590BC45-9A42-46C5-B815-9893F21A731D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B13F7A45-BD6E-48B9-815B-4569ABD97650}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B13F7A45-BD6E-48B9-815B-4569ABD97650}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B13F7A45-BD6E-48B9-815B-4569ABD97650}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B13F7A45-BD6E-48B9-815B-4569ABD97650}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

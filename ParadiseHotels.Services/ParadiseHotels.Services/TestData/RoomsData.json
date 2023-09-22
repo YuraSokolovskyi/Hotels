@@ -1,0 +1,135 @@
+﻿{
+  "Users": [
+    {
+      "FirstName": "Misha",
+      "LastName": "Chudackov",
+      "MiddleName": "Alexandrovych",
+      "Phone": "+3805249645",
+      "Email": "misha@gmail.com",
+      "City": "Lviv",
+      "Address": "someAdress, 54",
+      "Password": "qwerty",
+      "Type": 0
+    },
+    {
+      "FirstName": "Ivan",
+      "LastName": "Kosar",
+      "MiddleName": "Ivanovych",
+      "Phone": "+3805249645",
+      "Email": "misha@gmail.com",
+      "City": "Lviv",
+      "Address": "someAdress, 54",
+      "Password": "qwerty",
+      "Type": 0
+    },
+    {
+      "FirstName": "admin",
+      "LastName": "admin",
+      "MiddleName": "admin",
+      "Phone": "+3805249645",
+      "Email": "misha@gmail.com",
+      "City": "Lviv",
+      "Address": "someAdress, 54",
+      "Password": "admin",
+      "Type": 1
+    }
+  ],
+  "Hotels": [
+    {
+      "Name": "Hotel1",
+      "Description": "Great Hotel",
+      "City": "Kyiv",
+      "Address": "someAddress",
+      "Email": "some@gmail.com",
+      "Phone": "+38051453466",
+      "Rooms": [
+        {
+          "Price": 125,
+          "Bedrooms": 1,
+          "Bathrooms": 1,
+          "IsKitchen": true,
+          "Area": 25.9,
+          "RoomType": "Premium",
+          "RoomBooking": [
+            {
+              "UserId": 1,
+              "StartDate": "9/23/2023",
+              "EndDate": "10/23/2023"
+            }
+          ] 
+        },
+        {
+          "Price": 100,
+          "Bedrooms": 1,
+          "Bathrooms": 1,
+          "IsKitchen": true,
+          "Area": 25.9,
+          "RoomType": "Premium",
+          "RoomBooking": [
+            {
+              "UserId": 2,
+              "StartDate": "9/23/2023",
+              "EndDate": "10/23/2023"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Name": "Hotel1",
+      "Description": "Great Hotel",
+      "City": "Kyiv",
+      "Address": "someAddress",
+      "Email": "some@gmail.com",
+      "Phone": "+38051453466",
+      "Rooms": [
+        {
+          "Price": 125,
+          "Bedrooms": 1,
+          "Bathrooms": 1,
+          "IsKitchen": true,
+          "Area": 25.9,
+          "RoomType": "Premium",
+          "RoomBooking": []
+        },
+        {
+          "Price": 100,
+          "Bedrooms": 1,
+          "Bathrooms": 1,
+          "IsKitchen": true,
+          "Area": 25.9,
+          "RoomType": "Premium",
+          "RoomBooking": []
+        }
+      ]
+    },
+    {
+      "Name": "Hotel1",
+      "Description": "Great Hotel",
+      "City": "Kyiv",
+      "Address": "someAddress",
+      "Email": "some@gmail.com",
+      "Phone": "+38051453466",
+      "Rooms": [
+        {
+          "Price": 125,
+          "Bedrooms": 1,
+          "Bathrooms": 1,
+          "IsKitchen": true,
+          "Area": 25.9,
+          "RoomType": "Premium",
+          "RoomBooking": []
+        },
+        {
+          "Price": 100,
+          "Bedrooms": 1,
+          "Bathrooms": 1,
+          "IsKitchen": true,
+          "Area": 25.9,
+          "RoomType": "Premium",
+          "RoomBooking": []
+        }
+      ]
+    }
+  ]
+}

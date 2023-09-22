@@ -6,16 +6,16 @@ using ParadiseHotels.DAL.Repositories;
 
 namespace ParadiseRoomsStatus.Providers;
 
-public class RoomsStatusProvider
+public class RoomBookingProvider
 {
-    private readonly IRepository<RoomsStatus> _statusRepository;
+    private readonly IRepository<RoomBooking> _statusRepository;
     
-    public RoomsStatusProvider(IRepository<RoomsStatus> repository)
+    public RoomBookingProvider(IRepository<RoomBooking> repository)
     {
         _statusRepository = repository;
     }
 
-    public void AddRoomsStatuses(List<RoomsStatus> statuses)
+    public void AddRoomsStatuses(List<RoomBooking> statuses)
     {
         foreach (var status in statuses)
         {
@@ -23,17 +23,17 @@ public class RoomsStatusProvider
         }
     }
 
-    public void AddRoomsStatus(RoomsStatus status) 
+    public void AddRoomsStatus(RoomBooking status) 
     {
         _statusRepository.Add(status);
     }
 
-    public RoomsStatus GetRoomsStatusById(int id)
+    public RoomBooking GetRoomsStatusById(int id)
     {
         return _statusRepository.Get(id);
     }
 
-    public IEnumerable<RoomsStatus> GetRoomsStatuses() 
+    public IEnumerable<RoomBooking> GetRoomsStatuses() 
     { 
         return  _statusRepository.GetAll(); 
     }

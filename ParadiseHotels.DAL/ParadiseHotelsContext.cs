@@ -11,7 +11,7 @@ public class ParadiseHotelsContext : DbContext
 
     public DbSet<Hotel> Hotels { get; set; }
     public DbSet<Room> Rooms { get; set; }
-    public DbSet<RoomsStatus> RoomsStatuses { get; set; }
+    public DbSet<RoomBooking> RoomsStatuses { get; set; }
     public DbSet<User> Users { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -42,14 +42,14 @@ public class ParadiseHotelsContext : DbContext
         //     .WithMany(roomType => roomType.Rooms)
         //     .HasForeignKey(roomType => roomType.Id);
         //
-        // modelBuilder.Entity<RoomsStatus>()
+        // modelBuilder.Entity<RoomBooking>()
         //     .HasOne(roomsStatus => roomsStatus.Room)
-        //     .WithMany(room => room.RoomsStatus)
+        //     .WithMany(room => room.RoomBooking)
         //     .HasForeignKey(room => room.Id);
         //
-        // modelBuilder.Entity<RoomsStatus>()
+        // modelBuilder.Entity<RoomBooking>()
         //     .HasOne(roomsStatus => roomsStatus.User)
-        //     .WithMany(user => user.RoomsStatus)
+        //     .WithMany(user => user.RoomBooking)
         //     .HasForeignKey(user => user.Id)
         //     .OnDelete(DeleteBehavior.Restrict);
         //

@@ -31,5 +31,6 @@ public class User
     [Required]
     public string Password { get; set; }
     
-    // public virtual ICollection<RoomsStatus> RoomsStatus { get; set; }
+    [Required]
+    public int Type { get; set; }
 }
