@@ -145,6 +145,7 @@ public class Services
 
         foreach (Hotel hotel in hotels)
         {
+            if (hotel.Rooms == null) continue;
             if (getFreeRooms(hotel.Rooms.ToList(), startDate, endDate).Count != 0) result.Add(hotel);
         }
         
@@ -174,6 +175,40 @@ public class Services
     public List<RoomBooking> getBookingByUser()
     {
         return _roomBookingProvider.GetRoomBookings().Where(booking => booking.UserId == User.Id).ToList();
+    }
+
+    public bool updateHotel(Hotel hotel)
+    {
+        if (hotel.Id == 0)
+        {
+            if (hotel.Name == "" ||
+                hotel.Address == "" ||
+                hotel.City == "" ||
+                hotel.Email == "" ||
+                hotel.Phone == "" ||
+                hotel.Description == "") return false;
+            else
+            {
+                hotel.Rooms = new List<Room>();
+                _hotelProvider.AddHotel(hotel);
+                _hotels = _hotelProvider.GetHotels().ToList();
+                _rooms = _roomProvider.GetRooms().ToList();
+                return true;
+            }
+        }
+        else
+        {
+            _hotelProvider.UpdateHotel(hotel);
+            _hotels = _hotelProvider.GetHotels().ToList();
+            _rooms = _roomProvider.GetRooms().ToList();
+            return true;
+        }
+    }
+
+    public void deleteHotel(Hotel hotel)
+    {
+        _hotelProvider.DeleteHotelById(hotel.Id);
+        _hotels = _hotelProvider.GetHotels().ToList();
     }
     
     public void uploadTestData()

@@ -44,7 +44,7 @@
                 
                 <StackPanel HorizontalAlignment="Right">
                     <TextBlock HorizontalAlignment="Right" Name="Email" Margin="0 0 10 0"></TextBlock>
-                    <TextBlock HorizontalAlignment="Right" Name="Phone"></TextBlock>
+                    <TextBlock HorizontalAlignment="Right" Name="Phone" Margin="0 0 10 0"></TextBlock>
                 </StackPanel>
             </StackPanel>
         </Border>

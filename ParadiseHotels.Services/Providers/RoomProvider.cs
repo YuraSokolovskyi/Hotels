@@ -45,6 +45,11 @@ public class RoomProvider
         return  _roomRepository.GetAll(); 
     }
 
+    public void UpdateRoom(Room room)
+    {
+        _roomRepository.Update(room);
+    }
+
     public void DeleteRoomById(int id)
     {
         _roomRepository.Remove(GetRoomById(id));

@@ -18,6 +18,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
                 </Grid.RowDefinitions>
                 
                 <StackPanel Grid.Row="0" Name="Filters">
@@ -81,6 +82,18 @@
                     MouseUp="Bookings_OnMouseUp"
                     >
                     Bookings
+                </TextBlock>
+                
+                <TextBlock 
+                    Grid.Row="2" 
+                    Name="AddHotel" 
+                    HorizontalAlignment="Center" 
+                    Margin="0 0 0 10" 
+                    Foreground="#0050c2" 
+                    Cursor="Hand" 
+                    MouseUp="AddHotel_OnMouseUp"
+                >
+                    Edit Hotels
                 </TextBlock>
             </Grid>
         </Border>

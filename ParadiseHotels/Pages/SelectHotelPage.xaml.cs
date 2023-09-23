@@ -14,6 +14,7 @@ public partial class SelectHotelPage : Page
     public delegate void SetFiltersDelegate(DateTime startDate, DateTime endDate, int minPrice, int maxPrice);
 
     public delegate void ShowBookings();
+    public delegate void EditHotels();
     
     public event MouseButtonEventHandler _onHotelClick;
     public ShowBookings _showBookings;
@@ -21,6 +22,7 @@ public partial class SelectHotelPage : Page
 
     // filters
     private SetFiltersDelegate _setFilters;
+    private EditHotels _editHotels;
     private DateTime _startDate;
     private DateTime _endDate;
     private int _minPrice;
@@ -35,12 +37,14 @@ public partial class SelectHotelPage : Page
         int minPrice, 
         int maxPrice, 
         SetFiltersDelegate setFilters,
-        ShowBookings showBookings)
+        ShowBookings showBookings,
+        EditHotels editHotels)
     {
         InitializeComponent();
 
         _services = services;
         _showBookings = showBookings;
+        _editHotels = editHotels;
         
         // filters
         _setFilters = setFilters;
@@ -65,7 +69,7 @@ public partial class SelectHotelPage : Page
         MaxPrice.Text = _maxPrice == -1 ? "" : _maxPrice.ToString();
     }
     
-    private void CreateHotel(Hotel hotel)
+    private void createHotel(Hotel hotel)
     {
         HotelComponent hotelComponent = new HotelComponent(hotel);
         hotelComponent.MouseUp += HotelClick;
@@ -78,7 +82,7 @@ public partial class SelectHotelPage : Page
         foreach (Hotel hotel in Services.Services.getHotelsWithFreeRooms(_services.getHotels(), _startDate, _endDate))
         {
             if (Services.Services.isHotelAffordable(hotel, _minPrice, _maxPrice) || _maxPrice == -1) 
-                CreateHotel(hotel);
+                createHotel(hotel);
         }
     }
 
@@ -170,5 +174,10 @@ public partial class SelectHotelPage : Page
     private void Bookings_OnMouseUp(object sender, MouseButtonEventArgs e)
     {
         _showBookings.Invoke();
+    }
+
+    private void AddHotel_OnMouseUp(object sender, MouseButtonEventArgs e)
+    {
+        _editHotels.Invoke();
     }
 }

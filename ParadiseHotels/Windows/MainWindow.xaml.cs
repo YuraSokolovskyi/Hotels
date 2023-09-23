@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using ParadiseHotels.Controls;
+using ParadiseHotels.DAL.Entity;
 using ParadiseHotels.Pages;
 
 namespace ParadiseHotels
@@ -12,6 +13,8 @@ namespace ParadiseHotels
     public partial class MainWindow : Window
     {
         private SelectHotelPage _selectHotelPage;
+        private EditHotelsPage _editHotelsPage;
+        
         private Services.Services _services = new Services.Services();
 
         private DateTime _startDate = DateTime.Today;
@@ -39,7 +42,17 @@ namespace ParadiseHotels
 
         private void drawSelectHotelPage()
         {
-            _selectHotelPage = new SelectHotelPage(_services, _startDate, _endDate, _minPrice, _maxPrice, setFilters, showBookings);
+            _selectHotelPage = new SelectHotelPage(
+                _services, 
+                _startDate, 
+                _endDate, 
+                _minPrice, 
+                _maxPrice, 
+                setFilters, 
+                showBookings, 
+                showEditHotelsPage
+                );
+            
             _selectHotelPage._onHotelClick += HotelOnMouseLeftButtonUp;
             Frame.Content = _selectHotelPage;
         }
@@ -49,7 +62,7 @@ namespace ParadiseHotels
             Frame.Content = new SelectRoomPage(
                 ((HotelComponent)sender)._hotel, 
                 BookRoomButton_OnMouseLeftButtonUp, 
-                BookRoomBack, 
+                BackToHotels, 
                 _startDate, 
                 _endDate,
                 _minPrice,
@@ -63,9 +76,14 @@ namespace ParadiseHotels
             drawSelectHotelPage();
         }
 
-        private void BookRoomBack()
+        private void BackToHotels()
         {
             Frame.Content = _selectHotelPage;
+        }
+        
+        private void BackToNewHotels()
+        {
+            drawSelectHotelPage();
         }
 
         private void registeredNewUser()
@@ -90,7 +108,23 @@ namespace ParadiseHotels
 
         private void showBookings()
         {
-            Frame.Content = new BookingsPage(_services, BookRoomBack);
+            Frame.Content = new BookingsPage(_services, BackToHotels);
+        }
+
+        private void showEditHotelsPage()
+        {
+            _editHotelsPage = new EditHotelsPage(_services, BackToNewHotels, showEditRoomsPage);
+            Frame.Content = _editHotelsPage;
+        }
+
+        private void showEditRoomsPage(Hotel hotel)
+        {
+            Frame.Content = new EditRoomsPage(hotel, _services, backToEditHotelsPage);
+        }
+
+        private void backToEditHotelsPage()
+        {
+            Frame.Content = _editHotelsPage;
         }
     }
 }

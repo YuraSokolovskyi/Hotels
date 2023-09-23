@@ -42,4 +42,9 @@ public class HotelProvider
     {
         _hotelRepository.Remove(GetHotelById(id));
     }
+
+    public void UpdateHotel(Hotel hotel)
+    {
+        _hotelRepository.Update(hotel);
+    }
 }
