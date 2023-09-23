@@ -122,7 +122,7 @@ namespace ParadiseHotels.DAL.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("RoomsStatuses");
+                    b.ToTable("RoomBooking");
                 });
 
             modelBuilder.Entity("ParadiseHotels.DAL.Entity.User", b =>

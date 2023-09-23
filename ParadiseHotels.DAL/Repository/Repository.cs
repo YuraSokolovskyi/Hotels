@@ -39,5 +39,6 @@ public class Repository<T> : IRepository<T> where T : class
     {
         _dbSet.Attach(entity);
         _context.Entry(entity).State = EntityState.Modified;
+        _context.SaveChanges();
     }
 }

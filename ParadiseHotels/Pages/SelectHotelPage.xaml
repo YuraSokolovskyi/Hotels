@@ -1,0 +1,92 @@
+﻿<Page x:Class="ParadiseHotels.SelectHotelPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:ParadiseHotels"
+      xmlns:sys="clr-namespace:System;assembly=System.Runtime"
+      mc:Ignorable="d"
+      Title="SelectHotelPage">
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+        <Border Name="FiltersBorder" Grid.Column="0" BorderThickness="0 0 1 0" BorderBrush="#404040">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                
+                <StackPanel Grid.Row="0" Name="Filters">
+                    <Label Margin="10 10 10 0" Width="Auto" VerticalAlignment="Center" HorizontalAlignment="Center">Date</Label>
+                    <StackPanel Name="Dates" Orientation="Horizontal" Margin="0 0 0 30">
+                        <DatePicker 
+                            DisplayDateStart="{x:Static sys:DateTime.Today}" 
+                            DisplayDateEnd="{x:Static sys:DateTime.MaxValue}"
+                            SelectedDateChanged="StartDate_OnSelectedDateChanged"
+                            Name="StartDate" 
+                            Width="100"
+                            Margin="10 10 0 10">
+                        </DatePicker>
+                        
+                        <Label HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 10 0 10">-</Label>
+                        
+                        <DatePicker 
+                            DisplayDateStart="{x:Static sys:DateTime.Today}" 
+                            DisplayDateEnd="{x:Static sys:DateTime.MaxValue}"
+                            SelectedDateChanged="EndDate_OnSelectedDateChanged"
+                            Name="EndDate" 
+                            Width="100"
+                            Margin="0 10 10 10">
+                        </DatePicker>
+                    </StackPanel>
+                    
+                    <Label Margin="10 0 10 0" Width="Auto" VerticalAlignment="Center" HorizontalAlignment="Center">Price</Label>
+                    <StackPanel Name="Price" Orientation="Horizontal" Margin="0 0 0 30">
+                        <TextBox 
+                            VerticalAlignment="Center" 
+                            KeyDown="Price_OnKeyDown" 
+                            PreviewTextInput="Price_OnPreviewTextInput" 
+                            Name="MinPrice" 
+                            Width="100" 
+                            Margin="10 10 0 10" 
+                            TextChanged="MinPrice_OnTextChanged">
+                        </TextBox>
+                        
+                        <Label HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 10 0 10">-</Label>
+                        
+                        <TextBox 
+                            VerticalAlignment="Center" 
+                            KeyDown="Price_OnKeyDown" 
+                            PreviewTextInput="Price_OnPreviewTextInput" 
+                            Name="MaxPrice"
+                            Width="100" 
+                            Margin="0 10 10 10" 
+                            TextChanged="MaxPrice_OnTextChanged"
+                            Loaded="MaxPrice_OnLoaded">
+                        </TextBox>
+                    </StackPanel>
+                </StackPanel>
+                
+                <TextBlock 
+                    Grid.Row="1" 
+                    Name="Bookings" 
+                    HorizontalAlignment="Center" 
+                    Margin="0 0 0 10" 
+                    Foreground="#0050c2" 
+                    Cursor="Hand" 
+                    MouseUp="Bookings_OnMouseUp"
+                    >
+                    Bookings
+                </TextBlock>
+            </Grid>
+        </Border>
+        
+        <ScrollViewer Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto">
+            <StackPanel Name="Hotels" Orientation="Vertical"></StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

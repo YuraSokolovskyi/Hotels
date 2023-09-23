@@ -7,7 +7,7 @@
       "Phone": "+3805249645",
       "Email": "misha@gmail.com",
       "City": "Lviv",
-      "Address": "someAdress, 54",
+      "Address": "Hlazunova Street, 54",
       "Password": "qwerty",
       "Type": 0
     },
@@ -16,118 +16,81 @@
       "LastName": "Kosar",
       "MiddleName": "Ivanovych",
       "Phone": "+3805249645",
-      "Email": "misha@gmail.com",
+      "Email": "ivan@gmail.com",
       "City": "Lviv",
-      "Address": "someAdress, 54",
+      "Address": "Hlazunova Street, 44",
       "Password": "qwerty",
       "Type": 0
-    },
-    {
-      "FirstName": "admin",
-      "LastName": "admin",
-      "MiddleName": "admin",
-      "Phone": "+3805249645",
-      "Email": "misha@gmail.com",
-      "City": "Lviv",
-      "Address": "someAdress, 54",
-      "Password": "admin",
-      "Type": 1
     }
   ],
   "Hotels": [
     {
-      "Name": "Hotel1",
-      "Description": "Great Hotel",
-      "City": "Kyiv",
-      "Address": "someAddress",
-      "Email": "some@gmail.com",
-      "Phone": "+38051453466",
+      "Name": "Ponderosa Motor Inn",
+      "Description": "Located on the Trans-Canada Highway, this Golden motel is situated between the Rocky and Selkirk mountain ranges. Golden town centre is 5 minutes' drive away. Free WiFi access and cable TV are provided in every room at the Ponderosa Motor Inn. They are equipped with a refrigerator and include bathroom amenities. A children’s playground are located on site at the Ponderosa Inn. There is also an outdoor patio with BBQ facilities.",
+      "City": "Ottawa",
+      "Address": "1206 Transcanada Highway, V0A 1H0 Golden",
+      "Email": "Ponderosa@gmail.com",
+      "Phone": "+16132524623",
       "Rooms": [
         {
-          "Price": 125,
+          "Price": 139,
           "Bedrooms": 1,
           "Bathrooms": 1,
-          "IsKitchen": true,
-          "Area": 25.9,
-          "RoomType": "Premium",
-          "RoomBooking": [
-            {
-              "UserId": 1,
-              "StartDate": "9/23/2023",
-              "EndDate": "10/23/2023"
-            }
-          ] 
+          "IsKitchen": false,
+          "Area": 37,
+          "RoomType": "Queen"
         },
         {
-          "Price": 100,
+          "Price": 159,
           "Bedrooms": 1,
           "Bathrooms": 1,
-          "IsKitchen": true,
-          "Area": 25.9,
-          "RoomType": "Premium",
-          "RoomBooking": [
-            {
-              "UserId": 2,
-              "StartDate": "9/23/2023",
-              "EndDate": "10/23/2023"
-            }
-          ]
+          "IsKitchen": false,
+          "Area": 46,
+          "RoomType": "King"
         }
       ]
     },
     {
-      "Name": "Hotel1",
-      "Description": "Great Hotel",
+      "Name": "Sophia Hotel Kyiv",
+      "Description": "Sophia Hotel Kyiv features a garden, terrace, a restaurant and bar in Kyiv. This property is set a short distance from attractions such as St. Volodymyr's Cathedral, St. Michael's Golden-Domed Monastery, and Khreshchatyk Metro Station. The accommodation offers a 24-hour front desk, a shuttle service, room service and free WiFi throughout the property.",
       "City": "Kyiv",
-      "Address": "someAddress",
-      "Email": "some@gmail.com",
-      "Phone": "+38051453466",
+      "Address": "19 Sofiivs'ka Street, Kyiv, 01001",
+      "Email": "SophiaHotel@gmail.com",
+      "Phone": "+380504534624",
       "Rooms": [
         {
-          "Price": 125,
+          "Price": 152,
           "Bedrooms": 1,
           "Bathrooms": 1,
           "IsKitchen": true,
-          "Area": 25.9,
-          "RoomType": "Premium",
-          "RoomBooking": []
+          "Area": 17,
+          "RoomType": "Queen"
         },
         {
-          "Price": 100,
-          "Bedrooms": 1,
+          "Price": 201,
+          "Bedrooms": 2,
           "Bathrooms": 1,
-          "IsKitchen": true,
-          "Area": 25.9,
-          "RoomType": "Premium",
-          "RoomBooking": []
+          "IsKitchen": false,
+          "Area": 20,
+          "RoomType": "Superior"
         }
       ]
     },
     {
-      "Name": "Hotel1",
-      "Description": "Great Hotel",
+      "Name": "Khreschatyk Hotel",
+      "Description": "Khreshchatyk Hotel is located in Kiev, 200 meters from Maidan Nezalezhnosti Metro Station. It offers a fitness center, free private parking and a bar. Guests can make use of concierge services. There is an ATM and free Wi-Fi on site. The front desk is open 24 hours a day, and food and beverages can be delivered to the room. There is a currency exchange desk.\n\nThe hotel offers air-conditioned rooms with a flat-screen TV, desk, kettle, fridge, minibar, safe and private bathroom with shower. Some rooms have a kitchenette with a microwave. Each room at the Khreshchatyk Hotel comes with bed linen and towels.",
       "City": "Kyiv",
-      "Address": "someAddress",
-      "Email": "some@gmail.com",
-      "Phone": "+38051453466",
+      "Address": "Khreschatyc St, 14",
+      "Email": "KhreschatykHotel@gmail.com",
+      "Phone": "+380992659743",
       "Rooms": [
         {
-          "Price": 125,
+          "Price": 77,
           "Bedrooms": 1,
           "Bathrooms": 1,
           "IsKitchen": true,
-          "Area": 25.9,
-          "RoomType": "Premium",
-          "RoomBooking": []
-        },
-        {
-          "Price": 100,
-          "Bedrooms": 1,
-          "Bathrooms": 1,
-          "IsKitchen": true,
-          "Area": 25.9,
-          "RoomType": "Premium",
-          "RoomBooking": []
+          "Area": 21,
+          "RoomType": "Standard"
         }
       ]
     }

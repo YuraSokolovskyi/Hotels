@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:ParadiseHotels"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+         <BitmapImage x:Key="BackArrow" UriSource="Images/back.png"></BitmapImage>
     </Application.Resources>
 </Application>

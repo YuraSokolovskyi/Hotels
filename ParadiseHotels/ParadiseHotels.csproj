@@ -20,17 +20,12 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Page Update="Controls\Room.xaml">
+      <Page Update="Controls\HotelComponent.xaml">
         <Generator>MSBuild:Compile</Generator>
         <XamlRuntime>Wpf</XamlRuntime>
         <SubType>Designer</SubType>
       </Page>
-      <Page Update="Pages\BookRoomPage.xaml">
-        <Generator>MSBuild:Compile</Generator>
-        <XamlRuntime>Wpf</XamlRuntime>
-        <SubType>Designer</SubType>
-      </Page>
-      <Page Update="Pages\SelectRoomPage.xaml">
+      <Page Update="Pages\SelectHotelPage.xaml">
         <Generator>MSBuild:Compile</Generator>
         <XamlRuntime>Wpf</XamlRuntime>
         <SubType>Designer</SubType>
@@ -41,6 +36,16 @@
     <ItemGroup>
       <ProjectReference Include="..\ParadiseHotels.DAL\ParadiseHotels.DAL.csproj" />
       <ProjectReference Include="..\ParadiseHotels.Services\ParadiseHotels.Services\ParadiseHotels.Services.csproj" />
+    </ItemGroup>
+
+
+
+
+
+
+    <ItemGroup>
+      <None Remove="Images\back.png" />
+      <Resource Include="Images\back.png" />
     </ItemGroup>
 
 </Project>

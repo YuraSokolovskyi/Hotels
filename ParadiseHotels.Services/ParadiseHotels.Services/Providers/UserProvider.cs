@@ -33,6 +33,18 @@ public class UserProvider
         return _userRepository.Get(id);
     }
 
+    public User getUserByEmail(string email)
+    {
+        List<User> users = _userRepository.GetAll().Where(user => user.Email == email).ToList();
+        return users.Count != 0 ? users[0] : null;
+    }
+    
+    public User getUserByPhone(string phone)
+    {
+        List<User> users = _userRepository.GetAll().Where(user => user.Phone == phone).ToList();
+        return users.Count != 0 ? users[0] : null;
+    }
+
     public IEnumerable<User> GetUsers() 
     { 
         return  _userRepository.GetAll(); 

@@ -1,0 +1,64 @@
+﻿<Page x:Class="ParadiseHotels.Pages.RegisterPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:ParadiseHotels.Pages"
+      mc:Ignorable="d"
+      Title="RegisterPage">
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <Label Width="80" Margin="0 0 10 0">Name:</Label>
+                <TextBox Width="100" Name="FirstName" VerticalAlignment="Center" PreviewTextInput="OnPreviewTextInput"></TextBox>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <Label Width="80" Margin="0 0 10 0">Lastname:</Label>
+                <TextBox Width="100" Name="LastName" VerticalAlignment="Center" PreviewTextInput="OnPreviewTextInput"></TextBox>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <Label Width="80" Margin="0 0 10 0">Middle name:</Label>
+                <TextBox Width="100" Name="MiddleName" VerticalAlignment="Center" PreviewTextInput="OnPreviewTextInput"></TextBox>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <Label Width="80" Margin="0 0 10 0">E-mail:</Label>
+                <TextBox Width="100" Name="Email" VerticalAlignment="Center" PreviewTextInput="OnPreviewTextInput"></TextBox>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <Label Width="80" Margin="0 0 10 0">Password:</Label>
+                <TextBox Width="100" Name="Password" VerticalAlignment="Center" PreviewTextInput="OnPreviewTextInput"></TextBox>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <Label Width="80" Margin="0 0 10 0">Phone:</Label>
+                <TextBox Width="100" Name="Phone" VerticalAlignment="Center" PreviewTextInput="OnPreviewTextInput"></TextBox>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <Label Width="80" Margin="0 0 10 0">City:</Label>
+                <TextBox Width="100" Name="City" VerticalAlignment="Center" PreviewTextInput="OnPreviewTextInput"></TextBox>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <Label Width="80" Margin="0 0 10 0">Address:</Label>
+                <TextBox Width="100" Name="Address" VerticalAlignment="Center" PreviewTextInput="OnPreviewTextInput"></TextBox>
+            </StackPanel>
+            
+            <TextBlock Name="RegistrationError" HorizontalAlignment="Center" Cursor="Hand" Foreground="red"></TextBlock>
+            
+            <Button Width="120" Name="Register" Content="Register" Click="Register_OnClick">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            
+            <TextBlock Name="LogIn" HorizontalAlignment="Center" Cursor="Hand" Foreground="#0050c2" MouseUp="LogIn_OnMouseUp">Log in</TextBlock>
+        </StackPanel>
+    </Grid>
+</Page>

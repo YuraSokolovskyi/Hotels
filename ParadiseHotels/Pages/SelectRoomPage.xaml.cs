@@ -1,40 +1,64 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Controls;
 using System.Windows.Input;
+using ParadiseHotels.Controls;
+using ParadiseHotels.DAL.Entity;
 
-namespace ParadiseHotels;
+namespace ParadiseHotels.Pages;
 
 public partial class SelectRoomPage : Page
 {
-    public event MouseButtonEventHandler onRoomClick;
+    public delegate void RoomBookBack();
     
-    public SelectRoomPage()
+    public event MouseButtonEventHandler _onRoomBook;
+    public event RoomBookBack _roomBookBack;
+    
+    private Hotel _hotel;
+    
+    private DateTime _startDate;
+    private DateTime _endDate;
+    private int _minPrice;
+    private int _maxPrice;
+    
+    public SelectRoomPage(Hotel hotel, MouseButtonEventHandler onRoomBook, RoomBookBack back, DateTime startDate, DateTime endDate, int minPrice, int maxPrice)
     {
         InitializeComponent();
-        
-        createRoom();
-        createRoom();
-        createRoom();
-        createRoom();
-        createRoom();
-        createRoom();
-        createRoom();
-        createRoom();
-        createRoom();
-        createRoom();
-        createRoom();
+
+        _onRoomBook = onRoomBook;
+        _roomBookBack = back;
+        _hotel = hotel;
+        _startDate = startDate;
+        _endDate = endDate;
+        _minPrice = minPrice;
+        _maxPrice = maxPrice;
+
+        createRooms();
     }
     
-    void createRoom()
+    private void createRoom(Room room)
     {
-        Room room = new Room(new RoomData() { Name = "The Aston Vill Room", Address = "Alice Springs NT 0870, Australia", Description = "Test_description" });
-        room.MouseUp += RoomClick;
+        RoomComponent roomComponent = new RoomComponent(room, _startDate, _endDate);
+        roomComponent.MouseUp += bookRoom;
             
-        Rooms.Children.Add(room);
+        Rooms.Children.Add(roomComponent);
     }
 
-    private void RoomClick(object sender, MouseButtonEventArgs e)
+    private void createRooms()
     {
-        onRoomClick?.Invoke(this, e);
+        foreach (Room room in Services.Services.getFreeRooms(_hotel.Rooms.ToList(), _startDate, _endDate))
+        {
+            if ((room.Price >= _minPrice && room.Price <= _maxPrice) || _maxPrice == -1) createRoom(room);
+        }
+    }
+
+    private void bookRoom(object sender, MouseButtonEventArgs e)
+    {
+        _onRoomBook.Invoke(sender, e);
+    }
+
+    private void ImageBackMouseUp(object sender, MouseButtonEventArgs e)
+    {
+        _roomBookBack.Invoke();
     }
 }

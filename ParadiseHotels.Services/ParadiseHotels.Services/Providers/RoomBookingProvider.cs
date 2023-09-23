@@ -15,31 +15,31 @@ public class RoomBookingProvider
         _statusRepository = repository;
     }
 
-    public void AddRoomsStatuses(List<RoomBooking> statuses)
+    public void AddRoomBookings(List<RoomBooking> statuses)
     {
         foreach (var status in statuses)
         {
-            AddRoomsStatus(status);
+            AddRoomBooking(status);
         }
     }
 
-    public void AddRoomsStatus(RoomBooking status) 
+    public void AddRoomBooking(RoomBooking status) 
     {
         _statusRepository.Add(status);
     }
 
-    public RoomBooking GetRoomsStatusById(int id)
+    public RoomBooking GetRoomBookingById(int id)
     {
         return _statusRepository.Get(id);
     }
 
-    public IEnumerable<RoomBooking> GetRoomsStatuses() 
+    public IEnumerable<RoomBooking> GetRoomBookings() 
     { 
         return  _statusRepository.GetAll(); 
     }
 
-    public void DeleteRoomsStatusById(int id)
+    public void DeleteRoomBookingById(int id)
     {
-        _statusRepository.Remove(GetRoomsStatusById(id));
+        _statusRepository.Remove(GetRoomBookingById(id));
     }
 }

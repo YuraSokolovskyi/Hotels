@@ -29,7 +29,6 @@ public class Room
     [Required]
     public string RoomType { get; set; }
     
-    [Required]
     public ICollection<RoomBooking> RoomBooking { get; set; }
     
     [Required]

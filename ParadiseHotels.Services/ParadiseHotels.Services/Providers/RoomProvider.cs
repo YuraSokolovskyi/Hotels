@@ -8,14 +8,14 @@ namespace ParadiseHotels.Providers;
 
 public class RoomProvider
 {
-    private readonly IRepository<ParadiseHotels.DAL.Entity.Room> _roomRepository;
+    private readonly IRepository<Room> _roomRepository;
     
-    public RoomProvider(IRepository<ParadiseHotels.DAL.Entity.Room> repository)
+    public RoomProvider(IRepository<Room> repository)
     {
         _roomRepository = repository;
     }
 
-    public void AddRooms(List<ParadiseHotels.DAL.Entity.Room> rooms)
+    public void AddRooms(List<Room> rooms)
     {
         foreach (var room in rooms)
         {
@@ -23,17 +23,24 @@ public class RoomProvider
         }
     }
 
-    public void AddRoom(ParadiseHotels.DAL.Entity.Room room) 
+    public void AddRoom(Room room) 
     {
         _roomRepository.Add(room);
     }
 
-    public ParadiseHotels.DAL.Entity.Room GetRoomById(int id)
+    public void AddBooking(Room room, DateTime startDate, DateTime endDate, int userId)
+    {
+        if (room.RoomBooking == null) room.RoomBooking = new List<RoomBooking>();
+        room.RoomBooking.Add(new RoomBooking() {BookingStart = startDate, BookingEnd = endDate, UserId = userId});
+        _roomRepository.Update(room);
+    }
+
+    public Room GetRoomById(int id)
     {
         return _roomRepository.Get(id);
     }
 
-    public IEnumerable<ParadiseHotels.DAL.Entity.Room> GetRooms() 
+    public IEnumerable<Room> GetRooms() 
     { 
         return  _roomRepository.GetAll(); 
     }

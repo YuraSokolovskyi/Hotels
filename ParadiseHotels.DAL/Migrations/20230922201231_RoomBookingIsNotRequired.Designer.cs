@@ -12,8 +12,8 @@ using ParadiseHotels.DAL;
 namespace ParadiseHotels.DAL.Migrations
 {
     [DbContext(typeof(ParadiseHotelsContext))]
-    [Migration("20230921201206_UserAndBookingAdded")]
-    partial class UserAndBookingAdded
+    [Migration("20230922201231_RoomBookingIsNotRequired")]
+    partial class RoomBookingIsNotRequired
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -124,7 +124,7 @@ namespace ParadiseHotels.DAL.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("RoomsStatuses");
+                    b.ToTable("RoomBooking");
                 });
 
             modelBuilder.Entity("ParadiseHotels.DAL.Entity.User", b =>

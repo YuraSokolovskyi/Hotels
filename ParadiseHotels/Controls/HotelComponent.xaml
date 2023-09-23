@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="ParadiseHotels.HotelComponent"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:ParadiseHotels"
+             mc:Ignorable="d"
+             d:DesignHeight="Auto" d:DesignWidth="Auto">
+    <Grid Margin="10 10 10 10" Cursor="Hand">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+        <Border 
+            Name="HotelBlock" 
+            BorderBrush="#404040" 
+            Grid.Column="0" 
+            CornerRadius="10" 
+            BorderThickness="1" 
+            MouseEnter="UIElement_OnMouseEnter"
+            MouseLeave="HotelBlock_OnMouseLeave"
+            MouseMove="HotelBlock_OnMouseMove"
+            >
+            <StackPanel Margin="10 10 10 10">
+                <TextBlock Name="HotelName" FontSize="24" FontWeight="Bold" Margin="10 0 10 0">
+                    Ponderosa Motor Inn
+                </TextBlock>
+                
+                <StackPanel Orientation="Horizontal" Margin="10 0 0 15">
+                    <TextBlock Name="HotelAddress" FontSize="16" FontWeight="Normal" Foreground="#4d4d4d">
+                        1206 Transcanada Highway, V0A 1H0 Golden
+                    </TextBlock>
+                    <TextBlock FontSize="16" FontWeight="Normal" Foreground="#4d4d4d" Margin=" 0 0 5 0">,</TextBlock>
+                    <TextBlock Name="City" FontSize="16" FontWeight="Normal" Foreground="#4d4d4d" Margin="0">Ottawa</TextBlock>
+                </StackPanel>
+                
+                <TextBlock Name="HotelDescription" TextWrapping="Wrap" FontSize="16" FontWeight="Regular" Margin="10 0 10 15">
+                    Located on the Trans-Canada Highway, this Golden motel is situated between the Rocky and Selkirk mountain ranges. Golden town centre is 5 minutes' drive away.
+                    Free WiFi access and cable TV are provided in every room at the Ponderosa Motor Inn. They are equipped with a refrigerator and include bathroom amenities.
+                    A children’s playground are located on site at the Ponderosa Inn. There is also an outdoor patio with BBQ facilities.
+                    The weekend shuttle to Golden is located 500 metres way. Golden Airport is 4.3 km away.
+                    Couples particularly like the location — they rated it 8.0 for a two-person trip.
+                </TextBlock>
+                
+                <StackPanel HorizontalAlignment="Right">
+                    <TextBlock HorizontalAlignment="Right" Name="Email" Margin="0 0 10 0"></TextBlock>
+                    <TextBlock HorizontalAlignment="Right" Name="Phone"></TextBlock>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

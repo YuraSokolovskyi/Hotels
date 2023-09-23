@@ -12,7 +12,7 @@ using ParadiseHotels.DAL;
 namespace ParadiseHotels.DAL.Migrations
 {
     [DbContext(typeof(ParadiseHotelsContext))]
-    [Migration("20230921165555_InitialCreate")]
+    [Migration("20230922195500_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -98,7 +98,7 @@ namespace ParadiseHotels.DAL.Migrations
                     b.ToTable("Rooms");
                 });
 
-            modelBuilder.Entity("ParadiseHotels.DAL.Entity.RoomsStatus", b =>
+            modelBuilder.Entity("ParadiseHotels.DAL.Entity.RoomBooking", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -112,9 +112,19 @@ namespace ParadiseHotels.DAL.Migrations
                     b.Property<DateTime>("BookingStart")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("RoomId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
-                    b.ToTable("RoomsStatuses");
+                    b.HasIndex("RoomId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("RoomBooking");
                 });
 
             modelBuilder.Entity("ParadiseHotels.DAL.Entity.User", b =>
@@ -157,6 +167,9 @@ namespace ParadiseHotels.DAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("Type")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.ToTable("Users");
@@ -173,9 +186,33 @@ namespace ParadiseHotels.DAL.Migrations
                     b.Navigation("Hotel");
                 });
 
+            modelBuilder.Entity("ParadiseHotels.DAL.Entity.RoomBooking", b =>
+                {
+                    b.HasOne("ParadiseHotels.DAL.Entity.Room", "Room")
+                        .WithMany("RoomBooking")
+                        .HasForeignKey("RoomId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ParadiseHotels.DAL.Entity.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Room");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("ParadiseHotels.DAL.Entity.Hotel", b =>
                 {
                     b.Navigation("Rooms");
+                });
+
+            modelBuilder.Entity("ParadiseHotels.DAL.Entity.Room", b =>
+                {
+                    b.Navigation("RoomBooking");
                 });
 #pragma warning restore 612, 618
         }
