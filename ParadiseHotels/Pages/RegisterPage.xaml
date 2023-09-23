@@ -43,14 +43,14 @@
                 <TextBox Width="100" Name="City" VerticalAlignment="Center" PreviewTextInput="OnPreviewTextInput"></TextBox>
             </StackPanel>
             
-            <StackPanel Orientation="Horizontal" Margin="10">
+            <StackPanel Orientation="Horizontal" Margin="10 10 10 5">
                 <Label Width="80" Margin="0 0 10 0">Address:</Label>
                 <TextBox Width="100" Name="Address" VerticalAlignment="Center" PreviewTextInput="OnPreviewTextInput"></TextBox>
             </StackPanel>
             
-            <TextBlock Name="RegistrationError" HorizontalAlignment="Center" Cursor="Hand" Foreground="red"></TextBlock>
+            <TextBlock Name="RegistrationError" HorizontalAlignment="Center" Cursor="Hand" Foreground="red" Margin="0 0 0 10"></TextBlock>
             
-            <Button Width="120" Name="Register" Content="Register" Click="Register_OnClick">
+            <Button Width="120" Name="Register" Content="Register" Click="Register_OnClick" Margin="0 0 0 10">
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="5"/>
@@ -58,7 +58,7 @@
                 </Button.Resources>
             </Button>
             
-            <TextBlock Name="LogIn" HorizontalAlignment="Center" Cursor="Hand" Foreground="#0050c2" MouseUp="LogIn_OnMouseUp">Log in</TextBlock>
+            <TextBlock Name="LogIn" HorizontalAlignment="Center" Cursor="Hand" Foreground="#0050c2" MouseUp="LogIn_OnMouseUp" Margin="0 0 0 10">Log in</TextBlock>
         </StackPanel>
     </Grid>
 </Page>

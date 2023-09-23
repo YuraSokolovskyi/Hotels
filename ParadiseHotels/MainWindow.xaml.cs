@@ -23,7 +23,6 @@ namespace ParadiseHotels
         {
             InitializeComponent();
             
-            // drawSelectHotelPage();
             Frame.Content = new LogInPage(_services, loggedIn, goToRegistration);
         }
 

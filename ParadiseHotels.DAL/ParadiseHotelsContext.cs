@@ -6,7 +6,6 @@ namespace ParadiseHotels.DAL;
 
 public class ParadiseHotelsContext : DbContext
 {
-    // private string _connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString();
     private string _connectionString = "Data Source=localhost;Initial Catalog=ParadiseHotels;Integrated Security=true;TrustServerCertificate=True;Connection Timeout=30;";
 
     public DbSet<Hotel> Hotels { get; set; }

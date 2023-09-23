@@ -13,14 +13,14 @@
                 <TextBox Width="100" Name="Email" VerticalAlignment="Center" PreviewTextInput="OnPreviewTextInput"></TextBox>
             </StackPanel>
             
-            <StackPanel Orientation="Horizontal" Margin="10">
+            <StackPanel Orientation="Horizontal" Margin="10 10 10 5">
                 <Label Width="80" Margin="0 0 10 0">Password:</Label>
                 <TextBox Width="100" Name="Password" VerticalAlignment="Center" PreviewTextInput="OnPreviewTextInput"></TextBox>
             </StackPanel>
             
-            <TextBlock Name="LogInError" HorizontalAlignment="Center" Cursor="Hand" Foreground="red"></TextBlock>
+            <TextBlock Name="LogInError" HorizontalAlignment="Center" Cursor="Hand" Foreground="red" Margin="0 0 0 10"></TextBlock>
             
-            <Button Width="120" Name="LogIn" Content="Log in" Click="LogIn_OnClick">
+            <Button Width="120" Name="LogIn" Content="Log in" Click="LogIn_OnClick" Margin="0 0 0 10">
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="5"/>
